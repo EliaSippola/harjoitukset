@@ -5,13 +5,27 @@ function logteht(str) {
 }
 
 // tehtävän arvot
-function arvot(str1, str2 = null, str3 = null) {
+function arvot(str1, str2 = null, str3 = null, str4 = null) {
     if (str2 == null) {
         process.stdout.write(`\x1B[38;5;241mparametri(t): \x1B[38;5;226m${str1} \x1B[38;5;241m-> \x1B[0m`);
     } else if (str3 == null) {
+        if (str2 == "-n") {
+            process.stdout.write(`\x1B[38;5;241mparametri(t): \x1B[38;5;226m${str1} \x1B[38;5;241m-> \x1B[0m\x0A`);
+            return;
+        }
         process.stdout.write(`\x1B[38;5;241mparametri(t): \x1B[38;5;226m${str1}\x1B[38;5;241m, \x1B[38;5;226m${str2} \x1B[38;5;241m-> \x1B[0m`);
-    } else {
+    } else if (str4 == null) {
+        if (str3 == "-n") {
+            process.stdout.write(`\x1B[38;5;241mparametri(t): \x1B[38;5;226m${str1}\x1B[38;5;241m, \x1B[38;5;226m${str2} \x1B[38;5;241m-> \x1B[0m\x0A`);
+            return;
+        }
         process.stdout.write(`\x1B[38;5;241mparametri(t): \x1B[38;5;226m${str1}\x1B[38;5;241m, \x1B[38;5;226m${str2}\x1B[38;5;241m, \x1B[38;5;226m${str3} \x1B[38;5;241m-> \x1B[0m`);
+    } else {
+        if (str4 == "-n") {
+            process.stdout.write(`\x1B[38;5;241mparametri(t): \x1B[38;5;226m${str1}\x1B[38;5;241m, \x1B[38;5;226m${str2}\x1B[38;5;241m, \x1B[38;5;226m${str3} \x1B[38;5;241m-> \x1B[0m\x0A`);
+            return;
+        }
+        process.stdout.write(`\x1B[38;5;241mparametri(t): \x1B[38;5;226m${str1}\x1B[38;5;241m, \x1B[38;5;226m${str2}\x1B[38;5;241m, \x1B[38;5;226m${str3}\x1B[38;5;241m, \x1B[38;5;226m${str4} \x1B[38;5;241m-> \x1B[0m`);
     }
 }
 
@@ -43,7 +57,7 @@ console.log(`Janojäännös on ${jaannos}`);
 logteht("teht 2");
 
 function operaatiot(luku1, luku2) {
-    arvot(luku1, luku2);
+    arvot(luku1, luku2, "-n");
 
     summa = luku1 + luku2;
     erotus = luku1 - luku2;
@@ -76,7 +90,7 @@ for (i = 0; i < 5; i++) {
 logteht("teht 4");
 
 function ympyra(d) {
-    arvot(d);
+    arvot(d, "-n");
 
     console.log(`Halkaisija ${d}`);
     console.log(`Säde: ${d/2}`);
