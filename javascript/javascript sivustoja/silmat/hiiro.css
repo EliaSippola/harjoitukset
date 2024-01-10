@@ -1,0 +1,27 @@
+body {
+    background-color: #FFF;
+}
+#leye, #reye {
+    position: absolute;
+    top: 10svh;
+    width: 50px;
+    height: 50px;
+}
+#lpup, #rpup {
+    position: absolute;
+    top: 11.5svh;
+    width: 4px;
+    height: 4px;
+}
+#leye {
+    left: 45svh;
+}
+#reye {
+    right: 45svh;
+}
+#lpup {
+    left: 46.33svh;
+}
+#rpup {
+    right: 46.33svh;
+}
