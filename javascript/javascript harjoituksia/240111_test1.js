@@ -1,3 +1,9 @@
-const arvot = new Arvo("test");
+const listaa = require('./listaaArvo');
 
-arvot.listaa("test", "-n");
+function test(a, b) {
+    listaa(a, b, "-n");
+    console.log(a);
+    console.log(b);
+}
+
+test("a", "b");
