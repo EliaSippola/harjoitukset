@@ -1,0 +1,80 @@
+/* global */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* header */
+.header-carousel {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.header-carousel .carousel {
+    max-height: 280px;
+    overflow: hidden;
+}
+
+.header-carousel .carousel-item img {
+    width: 100%;
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .header-carousel .carousel {
+        max-height: 200px;
+    }
+}
+
+/* nav */
+nav {
+    background-color: rgb(12, 146, 12);
+    color: white;
+    font-weight: bold;
+    padding: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 10px 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+}
+
+nav ul li {
+    margin: 10px 2px;
+    padding: 0;
+}
+nav a:hover {
+    background-color: rgb(0, 78, 0);
+    text-decoration: none;
+    color: white;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 8px;
+    margin: auto;
+    border-radius: 5px;
+}
+
+/* sisältö */
+.container {
+    padding: 20px;
+}
+
+/* footer */
+footer {
+    background-color: #5d5d5d;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}

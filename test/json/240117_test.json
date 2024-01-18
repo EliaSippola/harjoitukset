@@ -1,0 +1,227 @@
+[
+    {
+        "OPISKELIJANUMERO": "1",
+        "ETUNIMI": "Jarkko",
+        "SUKUNIMI": "Turpeinen",
+        "SUKUPUOLI": "m",
+        "PITUUS": 177,
+        "KATUOSOITE": "Kaislakatu 8 D",
+        "POSTINUMERO": "80130",
+        "POSTITOIMIPAIKKA": "Joensuu",
+        "PUHELIN": "123456",
+        "EMAIL": "jarkko.turpeinen@riveria.fi",
+        "SYNTYMAAIKA": new Date("1969-08-28"),
+        "HARRASTUS": [
+            "uinti",
+            "hiihto"
+        ]
+    },
+    {
+        "ETUNIMI": "Matti",
+        "SUKUNIMI": "Möttönen",
+        "SUKUPUOLI": "m",
+        "PITUUS": 167,
+        "KATUOSOITE": "",
+        "POSTINUMERO": "",
+        "POSTITOIMIPAIKKA": "Kitee",
+        "PUHELIN": "",
+        "EMAIL": "",
+        "SYNTYMAAIKA": new Date("2002-03-11"),
+        "HARRASTUS": [
+            "uinti",
+            "laskettelu"
+        ]
+    },
+    {
+        "ETUNIMI": "Kimmo",
+        "SUKUNIMI": "Kiljunen",
+        "SUKUPUOLI": "m",
+        "PITUUS": 187,
+        "KATUOSOITE": "",
+        "POSTINUMERO": "",
+        "POSTITOIMIPAIKKA": "Lieksa",
+        "PUHELIN": "",
+        "EMAIL": "",
+        "SYNTYMAAIKA": new Date("2002-02-22"),
+        "HARRASTUS": [
+            "hiihto"
+        ]
+    },
+    {
+        "OPISKELIJANUMERO": "4",
+        "ETUNIMI": "Tero",
+        "SUKUNIMI": "Mikkonen",
+        "SUKUPUOLI": "m",
+        "PITUUS": 169,
+        "KATUOSOITE": "",
+        "POSTINUMERO": "",
+        "POSTITOIMIPAIKKA": "Kitee",
+        "PUHELIN": "",
+        "EMAIL": "",
+        "SYNTYMAAIKA": new Date("1987-02-27"),
+        "HARRASTUS": [
+            "tietokonepelaaminen",
+            "pyöräily"
+        ]
+    },
+    {
+        "ETUNIMI": "Jukka",
+        "SUKUNIMI": "Nevalainen",
+        "SUKUPUOLI": "m",
+        "PITUUS": 181,
+        "KATUOSOITE": "",
+        "POSTINUMERO": "",
+        "POSTITOIMIPAIKKA": "Eno",
+        "PUHELIN": "",
+        "EMAIL": "",
+        "SYNTYMAAIKA": new Date("1978-01-19"),
+        "HARRASTUS": [
+            "uinti",
+            "hiihto",
+            "lukeminen"
+        ]
+    },
+    {
+        "ETUNIMI": "Mari",
+        "SUKUNIMI": "Miettinen",
+        "SUKUPUOLI": "n",
+        "PITUUS": 167,
+        "KATUOSOITE": "",
+        "POSTINUMERO": "",
+        "POSTITOIMIPAIKKA": "Outokumpu",
+        "PUHELIN": "",
+        "EMAIL": "",
+        "SYNTYMAAIKA": new Date("2002-08-19"),
+        "HARRASTUS": [
+            "aerobic",
+            "lukeminen"
+        ]
+    },
+    {
+        "ETUNIMI": "Sari",
+        "SUKUNIMI": "Miettinen",
+        "SUKUPUOLI": "n",
+        "PITUUS": 172,
+        "KATUOSOITE": "",
+        "POSTINUMERO": "",
+        "POSTITOIMIPAIKKA": "Outokumpu",
+        "PUHELIN": "",
+        "EMAIL": "",
+        "SYNTYMAAIKA": new Date("2002-08-08"),
+        "HARRASTUS": [
+            "melonta",
+            "hiihto"
+        ]
+    },
+    {
+        "ETUNIMI": "Päivi",
+        "SUKUNIMI": "Komulainen",
+        "SUKUPUOLI": "n",
+        "PITUUS": 161,
+        "KATUOSOITE": "",
+        "POSTINUMERO": "",
+        "POSTITOIMIPAIKKA": "Joensuu",
+        "PUHELIN": "",
+        "EMAIL": "",
+        "SYNTYMAAIKA": new Date("2000-09-19"),
+        "HARRASTUS": [
+            "aerobic",
+            "melonta"
+        ]
+    },
+    {
+        "ETUNIMI": "Tea",
+        "SUKUNIMI": "Kärkkäinen",
+        "SUKUPUOLI": "n",
+        "PITUUS": 157,
+        "KATUOSOITE": "",
+        "POSTINUMERO": "",
+        "POSTITOIMIPAIKKA": "Kitee",
+        "PUHELIN": "",
+        "EMAIL": "",
+        "SYNTYMAAIKA": new Date("2002-09-29"),
+        "HARRASTUS": [
+            "juokseminen",
+            "tietokonepelaaminen"
+        ]
+    },
+    {
+        "ETUNIMI": "Minna",
+        "SUKUNIMI": "Komulainen",
+        "SUKUPUOLI": "n",
+        "PITUUS": 171,
+        "KATUOSOITE": "",
+        "POSTINUMERO": "",
+        "POSTITOIMIPAIKKA": "Lieksa",
+        "PUHELIN": "",
+        "EMAIL": "",
+        "SYNTYMAAIKA": new Date("2002-11-29"),
+        "HARRASTUS": [
+            "uinti"
+        ]
+    },
+    {
+        "ETUNIMI": "Timo",
+        "SUKUNIMI": "Testi",
+        "SUKUPUOLI": "m",
+        "PITUUS": 175,
+        "KATUOSOITE": "",
+        "POSTINUMERO": "",
+        "POSTITOIMIPAIKKA": "Joensuu",
+        "PUHELIN": "",
+        "EMAIL": "",
+        "SYNTYMAAIKA": new Date("2002-06-06"),
+        "HARRASTUS": [
+            "juokseminen",
+            "hiihto"
+        ]
+    },
+    {
+        "ETUNIMI": "Teppo",
+        "SUKUNIMI": "Testi",
+        "SUKUPUOLI": "m",
+        "PITUUS": 186,
+        "KATUOSOITE": "",
+        "POSTINUMERO": "",
+        "POSTITOIMIPAIKKA": "Joensuu",
+        "PUHELIN": "",
+        "EMAIL": "",
+        "SYNTYMAAIKA": new Date("2002-06-06"),
+        "HARRASTUS": [
+            "juokseminen",
+            "tietokonepelaaminen"
+        ]
+    },
+    {
+        "ETUNIMI": "Kimmo",
+        "SUKUNIMI": "Koe",
+        "SUKUPUOLI": "m",
+        "PITUUS": 170,
+        "KATUOSOITE": "",
+        "POSTINUMERO": "",
+        "POSTITOIMIPAIKKA": "",
+        "PUHELIN": "",
+        "EMAIL": "",
+        "SYNTYMAAIKA": new Date("2002-02-27"),
+        "HARRASTUS": [
+            "melonta",
+            "hiihto"
+        ]
+    },
+    {
+        "ETUNIMI": "Jukka",
+        "SUKUNIMI": "Jepponen",
+        "SUKUPUOLI": "m",
+        "PITUUS": 180,
+        "KATUOSOITE": "",
+        "POSTINUMERO": "",
+        "POSTITOIMIPAIKKA": "",
+        "PUHELIN": "",
+        "EMAIL": "",
+        "SYNTYMAAIKA": new Date("2002-02-27"),
+        "HARRASTUS": [
+            "melonta",
+            "tietokonepelaaminen"
+        ]
+    }
+]

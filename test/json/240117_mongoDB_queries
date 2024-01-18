@@ -1,0 +1,39 @@
+1. 
+db.Opiskelijat.find({"POSTITOIMIPAIKKA": "Outokumpu" })
+--
+db.Opiskelijat.find({"POSTITOIMIPAIKKA": {$in:["Outokumpu", "Kitee"]}})
+
+2. 
+db.Opiskelijat.find({$and:[{"SUKUPUOLI": "n"}, { $or:[{"POSTITOIMIPAIKKA" : "Outokumpu"}, {"POSTITOIMIPAIKKA":"Kitee"}]}]})
+
+3.
+db.Opiskelijat.find({"POSTITOIMIPAIKKA": {$in:["Outokumpu", "Kitee", "Lieksa"]}})
+
+4.
+db.Opiskelijat.find({$and:[{"SUKUPUOLI": "m"}, {"HARRASTUS": "tietokonepelaaminen"}]})
+
+5.
+db.Opiskelijat.find({"PITUUS" : {$gt: 170}})
+
+6.
+db.Opiskelijat.find({$and:[{"PITUUS" : {$gt: 170}}, {"SUKUPUOLI" : "n"}]})
+
+7.
+db.Opiskelijat.find({$and:[{"PITUUS" : {$gte: 160}}, {"PITUUS" : {$lte: 170}}]})
+
+8.
+db.Opiskelijat.find({"SYNTYMAAIKA": {$gte: new Date("2002-07-01")}})
+
+9.
+db.Opiskelijat.find({$expr:{$eq:[{$year:"$SYNTYMAAIKA"}, 2002]}})
+
+10.
+db.Opiskelijat.aggregate({$group: {_id: "1", ka: {$avg: "$PITUUS"}}})
+
+11.
+db.Opiskelijat.aggregate({$group: {_id: "1", p: {$max: "$PITUUS"}}})
+
+12.
+db.Opiskelijat.aggregate([{$match: {"SUKUPUOLI":"m"}},{$group: {_id: "1", ka: {$avg: "$PITUUS"}}}])
+
+13.
