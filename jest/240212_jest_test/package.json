@@ -4,5 +4,6 @@
   },
   "scripts": {
     "test": "jest"
-  }
+  },
+  "author": "elia sippola"
 }
