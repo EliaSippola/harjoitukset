@@ -1,5 +1,6 @@
 // functions
 
+// divide func
 function divide(a, b) {
     if (typeof(a) !== 'number' || typeof(b) !== 'number') {
         throw new Error("Unexpected parametres " + a + " and " + b);
@@ -10,4 +11,32 @@ function divide(a, b) {
     return a / b;
 }
 
-module.exports = divide;
+// ticket prize func
+function price(age) {
+
+    if (isNaN(age)) {
+        throw new Error("Unexpected parameter " + age);
+    } 
+
+    age = Number(age);
+    if (age < 0) {
+        throw new Error("Age can't be under 0");
+    } else if (age > 150) {
+        throw new Error("Age can't be over 150");
+    }
+
+    // prizes
+    if (age < 7) {
+        return 0.0;
+    } else if (age < 16) {
+        return 1.0;
+    } else if (age < 26) {
+        return 1.5;
+    } else if (age < 66) {
+        return 3.0;
+    } else {
+        return 1.5;
+    }
+}
+
+module.exports = {"div": divide, "pri": price};
