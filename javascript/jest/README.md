@@ -8,7 +8,7 @@ Käytä apuna Jest:in omaa docsia ([jestjs.io/docs/getting-started](https://jest
 install link -> [nodejs.org/en/download/](https://nodejs.org/en/download/)
 
 ## jest asennus projektiin
-install -> `npm install --save-dev jest`
+install -> `npm install --save-dev jest`  
 uninstall -> `npm uninstall jest`
 
 muista `.gitignore` kansiolle `node-modules`. Turha laittaa GitHubiin, käytä install komentoa toisella koneella.
