@@ -4,6 +4,11 @@ Tämä on ohje jest-testausympäristön asennukseen ([jestjs.io/](https://jestjs
 Käytä apuna Jest:in omaa docsia ([jestjs.io/docs/getting-started](https://jestjs.io/docs/getting-started))
 
 
+## jest asennus kprojektiin
+install -> `npm install --save-dev jest`
+uninstall -> `npm uninstall jest`
+
+muista `.gitignore` kansiolle `node-modules`. Turha laittaa GitHubiin, käytä install komentoa toisella koneella.
 
 
-npm v -> 10.2.3
+npm ver -> 10.2.3
