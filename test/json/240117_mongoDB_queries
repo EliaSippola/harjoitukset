@@ -37,3 +37,27 @@ db.Opiskelijat.aggregate({$group: {_id: "1", p: {$max: "$PITUUS"}}})
 db.Opiskelijat.aggregate([{$match: {"SUKUPUOLI":"m"}},{$group: {_id: "1", ka: {$avg: "$PITUUS"}}}])
 
 13.
+db.Opiskelijat.updateOne({"POSTITOIMIPAIKKA":"Eno"}, {$set: {"POSTITOIMIPAIKKA":"Joensuu"}})
+
+14.
+db.Opiskelijat.updateOne({$and: [{"ETUNIMI":"Kimmo"}, {"SUKUNIMI":"Kiljunen"}]}, {$set: {"KATUOSOITE":"Pielisentie 100", "POSTINUMERO":"81700","PUHELIN":"040 776445","EMAIL":"kimmo.kiljunen@gmail.com"}})
+
+15.
+
+
+16.
+
+
+17.
+
+
+18.
+
+
+19.
+
+
+20.
+
+
+21.
