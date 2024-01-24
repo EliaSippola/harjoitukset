@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "elia sippola",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
