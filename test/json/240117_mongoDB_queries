@@ -61,3 +61,4 @@ db.Opiskelijat.find({$and:[{$and:[{"HARRASTUS":"uinti"},{"HARRASTUS":"hiihto"}]}
 db.Opiskelijat.aggregate([{$group: {_id: 1, avg: {$avg: {$dateDiff: {startDate: "$SYNTYMAAIKA", endDate: "$$NOW", unit: "year"}}}}}])
 
 21.
+...
