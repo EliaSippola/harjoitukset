@@ -1,3 +1,2 @@
-# repository for random projects / school works
+# kouluprojektien repo
 
-*right now all projects are from school*
