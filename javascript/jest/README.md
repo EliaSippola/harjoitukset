@@ -4,7 +4,10 @@ Tämä on ohje jest-testausympäristön asennukseen ([jestjs.io/](https://jestjs
 Käytä apuna Jest:in omaa docsia ([jestjs.io/docs/getting-started](https://jestjs.io/docs/getting-started))
 
 
-## jest asennus kprojektiin
+## node
+install link -> [nodejs.org/en/download/](https://nodejs.org/en/download/)
+
+## jest asennus projektiin
 install -> `npm install --save-dev jest`
 uninstall -> `npm uninstall jest`
 
