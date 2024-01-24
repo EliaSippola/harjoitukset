@@ -10,8 +10,13 @@ test('18 = true', () => {
 
 test('NaN throws error', () => {
     expect(() => adult("test")).toThrow("not a number");
+    expect(() => adult()).toThrow("not a number");
 });
 
 test("numeric string returns error", () => {
     expect(() => adult("18")).toThrow("not a number");
 })
+
+test("-1 = false", () => {
+    expect(adult(-1)).toBe(false);
+});
