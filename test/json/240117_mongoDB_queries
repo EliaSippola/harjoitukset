@@ -43,21 +43,21 @@ db.Opiskelijat.updateOne({"POSTITOIMIPAIKKA":"Eno"}, {$set: {"POSTITOIMIPAIKKA":
 db.Opiskelijat.updateOne({$and: [{"ETUNIMI":"Kimmo"}, {"SUKUNIMI":"Kiljunen"}]}, {$set: {"KATUOSOITE":"Pielisentie 100", "POSTINUMERO":"81700","PUHELIN":"040 776445","EMAIL":"kimmo.kiljunen@gmail.com"}})
 
 15.
-
+db.Opiskelijat.find({"HARRASTUS":{$all:["hiihto","uinti"]}})
 
 16.
-
+db.Opiskelijat.distinct("HARRASTUS")
 
 17.
-
+db.Opiskelijat.find({"HARRASTUS":"uinti"})
 
 18.
-
+db.Opiskelijat.find({$and:[{"HARRASTUS":"uinti"},{"HARRASTUS":{$size:1}}]})
 
 19.
-
+db.Opiskelijat.find({$and:[{$and:[{"HARRASTUS":"uinti"},{"HARRASTUS":"hiihto"}]},{"HARRASTUS":{$size:2}}]})
 
 20.
-
+db.Opiskelijat.aggregate([{$group: {_id: 1, avg: {$avg: {$dateDiff: {startDate: "$SYNTYMAAIKA", endDate: "$$NOW", unit: "year"}}}}}])
 
 21.
