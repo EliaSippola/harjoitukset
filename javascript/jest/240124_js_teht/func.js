@@ -11,6 +11,7 @@ function divide(a, b) {
     return a / b;
 }
 
+
 // ticket prize func
 function bprice(age) {
 
