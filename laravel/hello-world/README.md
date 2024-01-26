@@ -1,2 +1,2 @@
 # Laravel projekti
-Laravel alustann harjoittelu
+Laravel alustan harjoittelu
