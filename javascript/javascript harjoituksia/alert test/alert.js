@@ -15,6 +15,7 @@ function openAlert(alertText) {
     button.classList.add("alert-button");
 
     text.innerText = alertText;
+    button.innerText = "Ok";
 
     document.body.appendChild(backround);
 
