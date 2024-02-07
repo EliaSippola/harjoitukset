@@ -44,6 +44,9 @@ def format_all(dir: str):
                 tietolinkki = yritys["detailsUri"]
 
                 for dataRes in data["results"]:
+
+                    json_valiaik = []
+
                     
                     if dataRes["businessId"] == ytunn:
 
@@ -142,6 +145,5 @@ def get_data(ytunn):
         return None
 
 if __name__ == "__main__":
-    json_valiaik = []
     format_all("./NoSQL/240131/data")
     print("\x1B[38;5;200msuccess!")
