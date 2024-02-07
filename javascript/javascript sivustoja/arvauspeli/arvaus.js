@@ -97,7 +97,8 @@ function teht3() {
 
 function endGame(winBool) {
     if (winBool) {
-        openAlert('Pelinhoitaja tässä hei! Voitit juuri 2 elokuvalippua!!');
+        //openAlert('Pelinhoitaja tässä hei! Voitit juuri 2 elokuvalippua!!');
+        openAlert('Onnittelut! pääset kotiin!!');
     } else {
         openAlert('Hävisit pelin! Parempi onni ensi kerralla!');
     }
