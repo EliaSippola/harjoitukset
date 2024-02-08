@@ -8,3 +8,6 @@
 
 # --- YTL Data ---
 /NoSQL/240131/data
+
+# --- nodejs npm ---
+**/node_modules

@@ -85,7 +85,7 @@ keys.forEach((key) => key.addEventListener("mouseup", (key) => {
     }
 }));
 
-keys.forEach((key) => key.addEventListener("mouseover", (key) => {
+keys.forEach((key) => key.addEventListener("mouseleave", (key) => {
 
     console.log(key.target.parentElement.classList);
 
