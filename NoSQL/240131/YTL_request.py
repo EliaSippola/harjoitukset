@@ -27,10 +27,10 @@ def hae_kaikki(dir: str):
 
             if data != None:
                 d = f"{dir}/{y}{m1}-{m2}_data.json"
-                with open(d, "w") as json_file:
-                    json.dump(data, json_file)
+                with open(d, "w", encoding='utf8') as json_file:
+                    json.dump(data, json_file, ensure_ascii=False)
             else:
-                raise Exception('error in data')
+                raise Exception('No more data found.')
 
         if y == 2025:
             return

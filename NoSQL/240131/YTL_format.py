@@ -27,7 +27,7 @@ def format_all(dir: str):
                 m2 = j
 
             d = f"{dir}/{y}{m1}-{m2}_data.json"
-            with open(d, "r") as tied:
+            with open(d, "r", encoding='utf8') as tied:
                 temp = json.load(tied)
             
             res = temp["results"]
@@ -121,11 +121,11 @@ def format_all(dir: str):
 
                         json_valiaik.append(tiedot)
 
-                        with open(f"{dir}/all_data.json", "a") as json_file:
+                        with open(f"{dir}/all_data.json", "a", encoding='utf8') as json_file:
                             json.dump(json_valiaik, json_file, ensure_ascii=False, indent=4)
 
                     else:
-                        print("error in data")
+                        print("No more data found")
                         
             print(f"{m1}-{m2} {y}")
 

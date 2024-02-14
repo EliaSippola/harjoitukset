@@ -1,0 +1,7 @@
+1. Kumpaa tietomallia käyttäisit, jos tekisit tietokannan yritykselle, jossa on on satoja tuhansia asiakkaita ja heidän toimintaa kertovia tietoja sekä tilauksia ja niihin liittyviä tietoja? Perustele valintasi.
+
+Satojen tuhansien asiakkaiden hoitamiseen kannattaa käyttää linkitysmetodia, jotta kokoelmat eivät kasva liian isoiksi. Kaikki ylimääräinen tieto kannattaa pitää toisissa kokoelmissa linkittämällä.
+
+2. Kumpaa tietomallia käyttäisit pienen parturikampaamon asiakkuuden ja varausten käsittelyyn?
+
+Tietojen linkittäminen on objektiivisesti parempi tapa, jos erilaisia tapahtumia tulee linkittää. Tietojen upottaminen on kuitenkin varteenotettava vaihtoehto datan luettavuuden ja yksinkertaisuuden kannalta. Varaukset kannattaa kuitenkin pitää erillään asiakastiedoista, tai ainakin pitää toista kokoelmaa niistä, vaikka upottaisikin tiedon varauskista asiakastietoihin.
