@@ -9,7 +9,7 @@ Tässä ohjeessa kerrotaan miten tämä sovellus käynnistetään fly.iossa, ja 
 Sovellus on yksinkertainen sivusto, jolla on yksi sivu juurikansiossa ('/').
 Sivusto avaa nettisivun portilla 3030.
 
-Sovellus näyttää sivustolla ainoastaan merkkijonon `Seeking truths beyond meaning of life, you will find 43.`.
+Sovellus näyttää sivustolla ainoastaan merkkijonon `Seeking truths beyond meaning of life, you will find 43.` .
 
 ## 2 Käyttöönotto
 
@@ -52,7 +52,7 @@ Sivuston voi myöskin avata internettiin fly.io palvelun avulla. **Huomaa, että
 flyctl logs === fly logs
 ```
 
-Ennen fly.io käyttöönottoa varmista, että `flyctl` on asennettu kokeilemalla komentoa `flyctl`
+Ennen fly.io käyttöönottoa varmista, että [flyctl](https://fly.io/docs/hands-on/install-flyctl/) on asennettu kokeilemalla komentoa `flyctl`
 
 #### 2.4.1 Flyctl kirjautuminen
 
