@@ -9,3 +9,9 @@ Nimet on merkattu päivämäärällä, jolloin tehtävä on aloitettu. Päiväm�
 ## laakuddaimpia projekteja
 
 *lisään tähän muutamia projekteja, jotka ovat suhteellisen laadukkaita, ja valmiita.*
+
+- [listaaArvo.js](/javascript/javascript%20harjoituksia/listaaArvo.js)
+
+Kansio: [listaaArvo.js kansio](/javascript/javascript%20harjoituksia/)
+
+Projekti listaa 

@@ -9,6 +9,8 @@ Tässä ohjeessa kerrotaan miten tämä sovellus käynnistetään fly.iossa, ja 
 Sovellus on yksinkertainen sivusto, jolla on yksi sivu juurikansiossa ('/').
 Sivusto avaa nettisivun portilla 3030.
 
+Sovellus näyttää sivustolla ainoastaan merkkijonon `Seeking truths beyond meaning of life, you will find 43.`.
+
 ## 2 Käyttöönotto
 
 ### 2.1 vaatimukset
