@@ -52,7 +52,7 @@ flyctl logs === fly logs
 
 Ennen fly.io käyttöönottoa varmista, että `flyctl` on asennettu kokeilemalla komentoa `flyctl`
 
-#### 2.4.1 Flyclt kirjautuminen
+#### 2.4.1 Flyctl kirjautuminen
 
 Kirjaudu sisään komennolla `flyctl auth login`
 
