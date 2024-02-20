@@ -9,7 +9,7 @@ const port = process.env.PORT || 3030;
 
 // default page
 app.get('/', (req, res) => {
-    res.send('hello world<br><br>This is a test site for fly.io');
+    res.send('Seeking truths beyond meaning of life, you will find 43.');
 });
 
 // listener
