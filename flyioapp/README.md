@@ -70,7 +70,7 @@ Kirjaudu sisään fly.io tunnuksillasi avautuvaan ikkunaan.
 
 *voit myös käyttää komentoa `flyctl apps create`, joka luo tyhjän apin. Huomaa, että käyttämällä komentoa `flyctl launch`, `flyctl` pyrkii tekemään kaikki fly.io vaatimukset automaattisesti. Jos käytät komentoa `flyctl apps create`, appi ei välttämättä toimi odotetusti.*
 
-*Huomaa, että fly.io appien nimet ovat globaalisti uniikkeja. Kenelläkään ei saa olla samanlaista appia.*
+*Huomaa, että fly.io appien nimet ovat globaalisti uniikkeja. Kenelläkään ei saa olla samannimistä appia.*
 
 3. Vaihda sovelluksen nimi tiedostossa [fly.toml](/flyioapp/fly.toml).
 
@@ -88,7 +88,7 @@ Ennen apin julkaisua, varmista että sinulla on appi dashboardilla fly.io -sivus
 
 1. käytä komentoa `flyctl deploy`.
 
-Kos komento menee läpi onnistuneesti, sivustosi tulisi olla toiminnassa.
+Jos komento menee läpi onnistuneesti, sivustosi tulisi olla toiminnassa.
 Voit avata sivuston fly.iosta tai terminaalissa näkyvällä osoitteella.
 
 Osoite koostuu appisi nimestä, ja `fly.dev` päätteestä.
@@ -98,6 +98,10 @@ Osoite koostuu appisi nimestä, ja `fly.dev` päätteestä.
 fly.io -sivusto antaa vain rajatun määrän resursseja ilmaiseksi. Huomaa, että sinulla voi olla vain 3 appia samaan aikaan jos haluat käyttää palvelua ilmaiseksi.
 
 voit nähdä sovelluksen lokit joko fly.io -sivustolla avaamalla apin, tai komennolla `flyctl logs` terminaalissa.
+
+Käytä sovelluksen debuggaamiseen komentoja `flyctl doctor` ja `flyctl status`, jotka kertovat lisätietoja toiminnasta.
+
+Sovellus käyttää noden versiota `20.10.0`, ja npm versiota `10.2.3`
 
 ## 4 päivitykset ja muutokset
 
