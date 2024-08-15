@@ -73,8 +73,9 @@ jos halutaan olla tarkkoja
 
 
 
-Mieti järkeviä käyttö- ja soveltamiskohteita PRH:n avoimelle datalle erilaisissa ohjelmistoissa.
+19. Mieti järkeviä käyttö- ja soveltamiskohteita PRH:n avoimelle datalle erilaisissa ohjelmistoissa.
 
 
 
-Miten hakisit yritykset, jotka ovat rekisteröity jollekin muulle toimialalle kuin ohjelmistojen kehittäminen, mutta niillä voi kuitenkin olla silti omaa ohjelmistokehitystä.
+20. Miten hakisit yritykset, jotka ovat rekisteröity jollekin muulle toimialalle kuin ohjelmistojen kehittäminen, mutta niillä voi kuitenkin olla silti omaa ohjelmistokehitystä.
+
