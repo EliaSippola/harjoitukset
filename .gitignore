@@ -11,3 +11,8 @@
 
 # --- nodejs npm ---
 **/node_modules
+
+# dotenv
+.env
+
+secret.js
