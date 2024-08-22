@@ -143,6 +143,64 @@ def loopTillMatch(newList, up, i, value, length, minimum):
         print("error:")
         print(newList, up, i, val, length, minimum)
 
+def preSortListV2():
+    start = timer()
+    with open("./harjoitukset/python/unsorted.txt", "r") as file:
+        str = file.read()
+
+    l = []
+    for i in str[:len(str)-1].split(";"):
+        l.append(int(i))
+    end = timer()
+    print("File read:", end-start)
+
+    # presort
+    start = timer()
+    length = len(l)
+
+    minimum = l[0]
+    maximum = minimum
+
+    for item in l:
+        if (minimum > item):
+            minimum = item
+        if (maximum < item):
+            maximum = item
+    
+    k = (maximum-minimum) / length + 1/maximum
+    i = 0
+    end = timer()
+    print("setup",end-start)
+
+    print("k:",k)
+
+    start = timer()
+    while True:
+        index = math.floor((l[i]-minimum)/k)
+        l[i] = l[i] + l[index]
+        l[index] = l[i] - l[index]
+        l[i] = l[i] - l[index]
+        index = math.floor((l[i]-minimum)/k)
+        print(l[i], l[index])
+        if (round(i*length) == round(index*length)):
+            i += 1
+            if (i == length):
+                break
+    end = timer()
+    print("preSortV2:", end-start)
+
+    start = timer()
+    str = ""
+    for item in l:
+        str += f"{item};"
+
+    with open("./harjoitukset/python/sorted.txt", "w") as file:
+        file.write(str)
+    end = timer()
+    print("File write:", end-start)
+
+    return
+
 def normalsort():
     start = timer()
     with open("./harjoitukset/python/unsorted.txt", "r") as file:
@@ -172,7 +230,7 @@ def normalsort():
     return
 
 def easyList():
-    l = list(range(11,1000000))
+    l = list(range(1,100))
     random.shuffle(l)
     setUnsorted(l)
 
@@ -217,14 +275,14 @@ if __name__ == "__main__":
 
     print("Presort:")
     start = timer()
-    preSortList()
+    preSortListV2()
     end = timer()
     print("presort:", end - start)
 
     checkSorted()
 
-    print("Normal sort:")
-    start = timer()
-    normalsort()
-    end = timer()
-    print("sort():", end - start)
+    #print("Normal sort:")
+    #start = timer()
+    #normalsort()
+    #end = timer()
+    #print("sort():", end - start)
