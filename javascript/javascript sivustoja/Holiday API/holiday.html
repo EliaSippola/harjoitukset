@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palkkalaskuri</title>
+    <link rel="stylesheet" href="holiday.css">
+</head>
+<body>
+    <h1>Palkkalaskuri</h1>
+    <div id="form">
+        <label for="amount">Palkka €/h: </label>
+        <input type="number" id="amount" name="amount">
+        <br>
+
+        <label for="hours">Tunnit: </label>
+        <input type="number" id="hours" name="hours">
+        <br>
+
+        <label for="date">Päivämäärä: </label>
+        <input type="date" name="date" id="date">
+        <br>
+
+        <select name="country" id="country">Maa:
+            <option value="FI">Suomi</option>
+        </select>
+        <br>
+
+        <button id="button">Laske</button>
+
+    </div>
+
+    <br>
+
+    <div id="resLine">
+        <p>Palkka yht: </p>
+        <div id="res"></div>
+    </div>
+
+    <script src="holiday.js" type="module"></script>
+
+</body>
+</html>
