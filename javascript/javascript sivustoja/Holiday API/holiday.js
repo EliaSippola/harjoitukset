@@ -24,7 +24,7 @@ function getPay() {
         button.style.cursor = "auto";
         document.body.style.cursor = "auto";
 
-        res.innerText = "Kaikkia kothia ei ole asetettu!";
+        res.innerText = "Kaikkia kohtia ei ole asetettu!";
         return;
     }
 
