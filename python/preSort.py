@@ -144,6 +144,7 @@ def loopTillMatch(newList, up, i, value, length, minimum):
         print(newList, up, i, val, length, minimum)
 
 def preSortListV2():
+    # read file
     start = timer()
     with open("./harjoitukset/python/unsorted.txt", "r") as file:
         str = file.read()
@@ -166,32 +167,84 @@ def preSortListV2():
             minimum = item
         if (maximum < item):
             maximum = item
-    
-    k = (maximum-minimum) / length + 1/maximum
+
+    k = (maximum-minimum) / (length-1)
     i = 0
     end = timer()
     print("setup",end-start)
 
-    print("k:",k)
-
     start = timer()
+    # wait till ready
     while True:
-        index = math.floor((l[i]-minimum)/k)
-        l[i] = l[i] + l[index]
-        l[index] = l[i] - l[index]
-        l[i] = l[i] - l[index]
-        index = math.floor((l[i]-minimum)/k)
-        print(l[i], l[index])
-        if (round(i*length) == round(index*length)):
+        # check index of current item
+        index = int((l[i]-minimum)/k)
+
+        # check if indexes match with current (it's a loop)
+        if (i == index):
+            # move to next item
             i += 1
-            if (i == length):
+
+            # check if we are at end
+            if (i == (length)):
                 break
+
+        # switch items at current indexes
+        #l[i] = l[i] + l[index] # 10 + 8 = 18
+        #l[index] = l[i] - l[index] # 18 - 8 = 10
+        #l[i] = l[i] - l[index] # 18 - 10 = 8
+        l[i], l[index] = l[index], l[i]
+
     end = timer()
     print("preSortV2:", end-start)
 
     start = timer()
     str = ""
     for item in l:
+        str += f"{item};"
+
+    with open("./harjoitukset/python/sorted.txt", "w") as file:
+        file.write(str)
+    end = timer()
+    print("File write:", end-start)
+
+    return
+
+def preSortListV3():
+    start = timer()
+    with open("./harjoitukset/python/unsorted.txt", "r") as file:
+        str = file.read()
+
+    l = []
+    for i in str[:len(str)-1].split(";"):
+        l.append(int(i))
+    end = timer()
+    print("File read:", end-start)
+
+    start = timer()
+    length = len(l)
+
+    minimum = min(l)
+    maximum = max(l)
+    
+    k = (maximum-minimum) / (length-1)
+
+    #newList = list(range(length))
+    newList = [0] * length
+
+    end = timer()
+    print("Setup:", end-start)
+
+    start = timer()
+    # predict where item will be in list
+    for i in range(0,length):
+        newList[int((l[i]-minimum)/k)] = l[i]
+
+    end = timer()
+    print("Predictions:", end-start)
+
+    start = timer()
+    str = ""
+    for item in newList:
         str += f"{item};"
 
     with open("./harjoitukset/python/sorted.txt", "w") as file:
@@ -230,7 +283,7 @@ def normalsort():
     return
 
 def easyList():
-    l = list(range(1,100))
+    l = list(range(-1,1000000))
     random.shuffle(l)
     setUnsorted(l)
 
@@ -273,16 +326,32 @@ if __name__ == "__main__":
     #harderList()
     easyList()
 
-    print("Presort:")
+    print("---\nPresortV1:")
     start = timer()
-    preSortListV2()
+    preSortList()
     end = timer()
-    print("presort:", end - start)
+    print("---\npresort full time:", end - start,"\n---")
 
     checkSorted()
 
-    #print("Normal sort:")
-    #start = timer()
-    #normalsort()
-    #end = timer()
-    #print("sort():", end - start)
+    print("---\nPresortV2:")
+    start = timer()
+    preSortListV2()
+    end = timer()
+    print("---\npresortV2 full time:", end - start,"\n---")
+
+    checkSorted()
+
+    print("---\nPresortV3:")
+    start = timer()
+    preSortListV3()
+    end = timer()
+    print("---\npresortV3 full time:", end - start,"\n---")
+
+    checkSorted()
+
+    print("---\nNormal sort:")
+    start = timer()
+    normalsort()
+    end = timer()
+    print("---\nNormal Sort full time:", end - start,"\n---")
