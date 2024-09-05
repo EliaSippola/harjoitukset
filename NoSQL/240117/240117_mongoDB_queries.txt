@@ -58,7 +58,11 @@ db.Opiskelijat.find({$and:[{"HARRASTUS":"uinti"},{"HARRASTUS":{$size:1}}]})
 db.Opiskelijat.find({$and:[{$and:[{"HARRASTUS":"uinti"},{"HARRASTUS":"hiihto"}]},{"HARRASTUS":{$size:2}}]})
 
 20.
-db.Opiskelijat.aggregate([{$group: {_id: 1, avg: {$avg: {$dateDiff: {startDate: "$SYNTYMAAIKA", endDate: "$$NOW", unit: "year"}}}}}])
+db.Opiskelijat.find({$elemMatch: {"HARRASTUS":"hiihto"}})
 
 21.
-...
+db.Opiskelijat.aggregate([{$group: {_id: 1, avg: {$avg: {$dateDiff: {startDate: "$SYNTYMAAIKA", endDate: "$$NOW", unit: "year"}}}}}])
+
+22.
+# Hae kaikki opiskelijat jotka ovat tasan 200 cm pitkiä
+db.Opiskelijat.find({"PITUUS" : 200})

@@ -9,6 +9,7 @@
 <body>
     <h1>Palkkalaskuri</h1>
     <div id="form">
+        <form>
         <label for="amount">Palkka €/h: </label>
         <input type="number" id="amount" name="amount">
         <br>
@@ -25,10 +26,13 @@
         <select name="country" id="country">Maa:
             <!-- Add options here if needed -->
             <option value="FI">Suomi</option>
+            <option value="US">Yhdysvallat</option>
+            <option value="GE">Saksa</option>
         </select>
         <br>
 
-        <button id="button">Laske</button>
+        <input type="submit" value="Laske" id="button"></button>
+        </form>
 
     </div>
 

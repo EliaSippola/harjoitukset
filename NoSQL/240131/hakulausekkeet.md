@@ -71,11 +71,12 @@ jos halutaan olla tarkkoja
 
 18. Hae yritykset, jotka tarjoavat "verkkomarkkinointi" -palveluita.
 
-
+`gb.Suomenohjelmistoyritykset.find({"Toimiala":/.*verkkmoarkkinointi.*/i})`
 
 19. Mieti järkeviä käyttö- ja soveltamiskohteita PRH:n avoimelle datalle erilaisissa ohjelmistoissa.
 
-
+Kaikki käyttötarkoitukset, joissa tarvitaan yritysten löytämistä tai listaamista.
 
 20. Miten hakisit yritykset, jotka ovat rekisteröity jollekin muulle toimialalle kuin ohjelmistojen kehittäminen, mutta niillä voi kuitenkin olla silti omaa ohjelmistokehitystä.
 
+Etsi regex haulla esimerkiksi `/.*software.*/i`

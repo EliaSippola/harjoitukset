@@ -9,6 +9,9 @@ def format_all(dir: str):
         pass
 
     y = 1987
+
+    json_file = open(f"{dir}/all_data.json", "a", encoding='utf8')
+
     while True:
         for i in range(1, 13):
 
@@ -34,98 +37,7 @@ def format_all(dir: str):
 
             for yritys in res:
                 ytunn = yritys['businessId']
-                data = get_data(ytunn)
-
-                if data == None:
-                    raise Exception("error in data")
-                
-                nimi = yritys['name']
-                rekisterointipaiva = date.isoformat(datetime.strptime(yritys["registrationDate"], '%Y-%m-%d'))
-                tietolinkki = yritys["detailsUri"]
-
-                for dataRes in data["results"]:
-
-                    json_valiaik = []
-
-                    
-                    if dataRes["businessId"] == ytunn:
-
-                        nimiLista = []
-                        for names in dataRes['names']:
-                            if names["registrationDate"] == None:
-                                nimiLista.append({"name": names["name"], "registrationDate": names["registrationDate"]})
-                            else:
-                                nimiLista.append({"name": names["name"], "registrationDate": date.isoformat(datetime.strptime(names["registrationDate"], '%Y-%m-%d'))})
-                        
-                        osoitteet = []
-                        for osoite in dataRes["addresses"]:
-                            if osoite['language'] == "FI" or osoite['language'] == None:
-                                if osoite["registrationDate"] == None:
-                                    osoitteet.append({"street": osoite["street"], "postCode": osoite["postCode"], "city": osoite["city"], "registrationDate": osoite["registrationDate"]})
-                                else:
-                                    osoitteet.append({"street": osoite["street"], "postCode": osoite["postCode"], "city": osoite["city"], "registrationDate": date.isoformat(datetime.strptime(osoite["registrationDate"], '%Y-%m-%d'))})
-
-                        yritysmuodot = []
-                        for yritysmuoto in dataRes["companyForms"]:
-                            if yritysmuoto['language'] == "FI" or yritysmuoto['language'] == None:
-                                if yritysmuoto["registrationDate"] == None:
-                                    yritysmuodot.append({'name': yritysmuoto['name'], "registrationDate": yritysmuoto["registrationDate"]})
-                                else:
-                                    yritysmuodot.append({'name': yritysmuoto['name'], "registrationDate": date.isoformat(datetime.strptime(yritysmuoto["registrationDate"], '%Y-%m-%d'))})
-
-                        yrityslinjat = []
-                        for yrityslinja in dataRes["businessLines"]:
-                            if yrityslinja['language'] == "FI" or yrityslinja['language'] == None:
-                                if yrityslinja["registrationDate"] == None:
-                                    yrityslinjat.append({'code': yrityslinja['code'] ,'name': yrityslinja['name'], "registrationDate": yrityslinja["registrationDate"]})
-                                else:
-                                    yrityslinjat.append({'code': yrityslinja['code'] ,'name': yrityslinja['name'], "registrationDate": date.isoformat(datetime.strptime(yrityslinja["registrationDate"], '%Y-%m-%d'))})
-
-                        kielet = []
-                        for kieli in dataRes["languages"]:
-                            if kieli['language'] == "FI" or kieli['language'] == None:
-                                if kieli["registrationDate"] == None:
-                                    kielet.append({'name': kieli['name'], "registrationDate": kieli["registrationDate"]})
-                                else:
-                                    kielet.append({'name': kieli['name'], "registrationDate": date.isoformat(datetime.strptime(kieli["registrationDate"], '%Y-%m-%d'))})
-                        
-                        toimistot = []
-                        for toimisto in dataRes["registedOffices"]:
-                            if toimisto['language'] == "FI" or toimisto['language'] == None:
-                                if toimisto["registrationDate"] == None:
-                                    toimistot.append({'name': toimisto['name'], "registrationDate": toimisto["registrationDate"]})
-                                else:
-                                    toimistot.append({'name': toimisto['name'], "registrationDate": date.isoformat(datetime.strptime(toimisto["registrationDate"], '%Y-%m-%d'))})
-                        
-                        yhteystiedot = []
-                        for yhteystieto in dataRes["contactDetails"]:
-                            if yhteystieto['language'] == "FI" or yhteystieto['language'] == None:
-                                if yhteystieto["registrationDate"] == None:
-                                    yhteystiedot.append({'type': yhteystieto['type'],'value': yhteystieto['value'] ,"registrationDate": yhteystieto["registrationDate"]})
-                                else:
-                                    yhteystiedot.append({'type': yhteystieto['type'],'value': yhteystieto['value'] ,"registrationDate": date.isoformat(datetime.strptime(yhteystieto["registrationDate"], '%Y-%m-%d'))})
-                        
-                        tiedot = {
-                            'bussinesID': ytunn,
-                            'name': nimi,
-                            'otherNames': nimiLista,
-                            'registrationDate': rekisterointipaiva,
-                            'adresses': osoitteet,
-                            'contactDetails': yhteystiedot,
-                            'registeredOffices': toimistot,
-                            'companyForms': yritysmuodot,
-                            'bussinessLines': yrityslinjat,
-                            'languages': kielet,
-                            'detailsUri': tietolinkki
-                        }
-
-                        json_valiaik.append(tiedot)
-
-                        with open(f"{dir}/all_data.json", "a", encoding='utf8') as json_file:
-                            json.dump(json_valiaik, json_file, ensure_ascii=False, indent=4)
-
-                    else:
-                        print("No more data found")
+                get_data(ytunn, yritys, json_file)
                         
             print(f"{m1}-{m2} {y}")
 
@@ -134,15 +46,110 @@ def format_all(dir: str):
         
         y += 1
 
-def get_data(ytunn):
+def printData(data, ytunn, yritys, json_file):
+    if data == None:
+        #print("Skipped " + yritys['name'] + "(" + yritys['bussinessId'] + ")")
+        return
+        #raise Exception("error in data")
+    
+    nimi = yritys['name']
+    rekisterointipaiva = date.isoformat(datetime.strptime(yritys["registrationDate"], '%Y-%m-%d'))
+    tietolinkki = yritys["detailsUri"]
+
+    for dataRes in data["results"]:
+
+        json_valiaik = []
+
+        
+        if dataRes["businessId"] == ytunn:
+
+            nimiLista = []
+            for names in dataRes['names']:
+                if names["registrationDate"] == None:
+                    nimiLista.append({"name": names["name"], "registrationDate": names["registrationDate"]})
+                else:
+                    nimiLista.append({"name": names["name"], "registrationDate": date.isoformat(datetime.strptime(names["registrationDate"], '%Y-%m-%d'))})
+            
+            osoitteet = []
+            for osoite in dataRes["addresses"]:
+                if osoite['language'] == "FI" or osoite['language'] == None:
+                    if osoite["registrationDate"] == None:
+                        osoitteet.append({"street": osoite["street"], "postCode": osoite["postCode"], "city": osoite["city"], "registrationDate": osoite["registrationDate"]})
+                    else:
+                        osoitteet.append({"street": osoite["street"], "postCode": osoite["postCode"], "city": osoite["city"], "registrationDate": date.isoformat(datetime.strptime(osoite["registrationDate"], '%Y-%m-%d'))})
+
+            yritysmuodot = []
+            for yritysmuoto in dataRes["companyForms"]:
+                if yritysmuoto['language'] == "FI" or yritysmuoto['language'] == None:
+                    if yritysmuoto["registrationDate"] == None:
+                        yritysmuodot.append({'name': yritysmuoto['name'], "registrationDate": yritysmuoto["registrationDate"]})
+                    else:
+                        yritysmuodot.append({'name': yritysmuoto['name'], "registrationDate": date.isoformat(datetime.strptime(yritysmuoto["registrationDate"], '%Y-%m-%d'))})
+
+            yrityslinjat = []
+            for yrityslinja in dataRes["businessLines"]:
+                if yrityslinja['language'] == "FI" or yrityslinja['language'] == None:
+                    if yrityslinja["registrationDate"] == None:
+                        yrityslinjat.append({'code': yrityslinja['code'] ,'name': yrityslinja['name'], "registrationDate": yrityslinja["registrationDate"]})
+                    else:
+                        yrityslinjat.append({'code': yrityslinja['code'] ,'name': yrityslinja['name'], "registrationDate": date.isoformat(datetime.strptime(yrityslinja["registrationDate"], '%Y-%m-%d'))})
+
+            kielet = []
+            for kieli in dataRes["languages"]:
+                if kieli['language'] == "FI" or kieli['language'] == None:
+                    if kieli["registrationDate"] == None:
+                        kielet.append({'name': kieli['name'], "registrationDate": kieli["registrationDate"]})
+                    else:
+                        kielet.append({'name': kieli['name'], "registrationDate": date.isoformat(datetime.strptime(kieli["registrationDate"], '%Y-%m-%d'))})
+            
+            toimistot = []
+            for toimisto in dataRes["registedOffices"]:
+                if toimisto['language'] == "FI" or toimisto['language'] == None:
+                    if toimisto["registrationDate"] == None:
+                        toimistot.append({'name': toimisto['name'], "registrationDate": toimisto["registrationDate"]})
+                    else:
+                        toimistot.append({'name': toimisto['name'], "registrationDate": date.isoformat(datetime.strptime(toimisto["registrationDate"], '%Y-%m-%d'))})
+            
+            yhteystiedot = []
+            for yhteystieto in dataRes["contactDetails"]:
+                if yhteystieto['language'] == "FI" or yhteystieto['language'] == None:
+                    if yhteystieto["registrationDate"] == None:
+                        yhteystiedot.append({'type': yhteystieto['type'],'value': yhteystieto['value'] ,"registrationDate": yhteystieto["registrationDate"]})
+                    else:
+                        yhteystiedot.append({'type': yhteystieto['type'],'value': yhteystieto['value'] ,"registrationDate": date.isoformat(datetime.strptime(yhteystieto["registrationDate"], '%Y-%m-%d'))})
+            
+            tiedot = {
+                'bussinesID': ytunn,
+                'name': nimi,
+                'otherNames': nimiLista,
+                'registrationDate': rekisterointipaiva,
+                'adresses': osoitteet,
+                'contactDetails': yhteystiedot,
+                'registeredOffices': toimistot,
+                'companyForms': yritysmuodot,
+                'bussinessLines': yrityslinjat,
+                'languages': kielet,
+                'detailsUri': tietolinkki
+            }
+
+            json_valiaik.append(tiedot)
+
+            json.dump(json_valiaik, json_file, ensure_ascii=False, indent=4)
+
+            print("Loaded")
+
+        else:
+            print("No more data found")
+
+def get_data(ytunn, yritys, json_file):
     url = f"http://avoindata.prh.fi/opendata/bis/v1/{ytunn}"
     res = pip._vendor.requests.get(url)
 
     if res.status_code == 200 and res.text:
         data = res.json()
-        return data
+        printData(data, ytunn, yritys, json_file)
     else:
-        return None
+        printData(None, ytunn, yritys, json_file)
 
 if __name__ == "__main__":
     format_all("./NoSQL/240131/data")
