@@ -29,7 +29,7 @@ function getPay() {
     }
 
     const dateArr = date.value.split("-");
-    const url = `https://holidays.abstractapi.com/v1/?api_key=${getApiKey()}&country=${country.value}&year=${dateArr[0]}&month=${dateArr[1]}&day=${dateArr[2]}`
+    const url = `https://holidays.abstractapi.com/v1/?api_key=${getApiKey()}&country=${country.value}&year=${dateArr[0]}&month=${dateArr[1]}&day=${dateArr[2]}`;
 
     httpGetAsync(url, (text) => showRes(text));
 }
